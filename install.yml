@@ -1,0 +1,12 @@
+#cloud-config
+package_update: true
+packages:
+  - git
+  - python-pip
+  - python-minimal
+runcmd:
+  - pip install ansible\==2.7.7
+  - cp -f /home/ubuntu/.ssh/authorized_keys /root/.ssh/authorized_keys
+  - chmod 0600 /root/.ssh/authorized_keys
+  - chown root:root /root/.ssh/authorized_keys
+  
