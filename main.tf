@@ -2,6 +2,8 @@ variable "aws_access_key" {}
 variable "aws_secret_key" {}
 variable "aws_region" {}
 variable "aws_zone" {}
+variable "key_name" {}
+
 
 # https://www.terraform.io/docs/providers/aws/index.html
 provider "aws" {
@@ -12,7 +14,7 @@ provider "aws" {
 
 resource "aws_key_pair" "auth" {
     key_name   = "${var.key_name}"
-    public_key = "${var.public_key}"
+    public_key = "${file("/vagrant/keys/key.pub")}"
 }
 
 # https://www.terraform.io/docs/providers/aws/d/security_group.html
@@ -24,6 +26,12 @@ resource "aws_security_group" "default" {
       from_port   = 22
       to_port     = 22
       protocol    = "tcp"
+      cidr_blocks = ["0.0.0.0/0"]
+    }
+    ingress {
+      from_port   = 0
+      to_port     = 0
+      protocol    = "icmp"
       cidr_blocks = ["0.0.0.0/0"]
     }
     egress {
