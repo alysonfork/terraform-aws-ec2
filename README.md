@@ -1,6 +1,6 @@
 # terraform-aws-ec2
 
-このコードは、Terraform と Terraform-Provider for IBM Cloud を使って、仮想サーバーのプロビジョニングを自動化するツールです。　概要などの説明は、[Terraform + Cloud-init + Ansible で IBM Cloud VSIプロビジョニング自動化](https://qiita.com/MahoTakara/items/0b23d9bca3edcfe0081c)に書きました。
+このコードは、Terraform と Terraform-Provider for IBM Cloud を使って、仮想サーバーのプロビジョニングを自動化するツールです。　概要などの説明は、[Terraform + Cloud-init + Ansible で IBM Cloud VSIプロビジョニング自動化](https://qiita.com/MahoTakara/items/0b23d9bca3edcfe0081c)と[Terraform + Cloud-init + Ansible で AWS EC2 プロビジョニングの共通化](https://qiita.com/MahoTakara/items/17b3ac66a55d4d8b02d7)に書きました。
 
 このコードの実行は、GitHub [takara9/vagrant-terraform](https://github.com/takara9/vagrant-terraform)で起動する仮想サーバーを前提としています。
 
